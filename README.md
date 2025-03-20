@@ -1,4 +1,4 @@
-# Medieval Adventure Game 🏰⚔️
+# Medieval Adventure Game - WIP! 🏰⚔️
 
 A **text-based medieval RPG** built with **Python**! Players explore, collect items, battle enemies, and level up.
 
