@@ -1,0 +1,233 @@
+HUMAN
+Stat Modifiers:
+
+STR: 0%
+
+CON: 0%
+
+AGI: 0%
+
+INT: 0%
+
+WIS: 0%
+
+Racial Perks (8):
+
+Versatile Learner - +10% XP gain, +10% reputation gain
+
+Silver Tongue - -5% reputation loss, +10% charisma with vendors
+
+Hunter-Gatherer - +10% gathering and hunting speed
+
+Cartographer - +20% to avoid ambushes, +20% to spot secrets/treasures, extended threat detection
+
+Endurance Runner - +15% stamina pool
+
+Fading Step - +10% stealth
+
+Plague-Hardened - +10% disease resistance
+
+Perfect Guard - 50% chance to riposte (70% reduced damage) if AGI > opponent
+
+Armor Effects:
+
++10% physical damage resistance when wearing chain or plate armor
+
+Legendary Perk: Cartographer's Legacy:
+
+Immune to ambushes
+
+Reveals hidden paths, loot, and threats on the map
+
++10% XP and reputation gain
+
++1 free travel action/day (ignores stamina cost)
+
+Recover stamina and mana while traveling
+
+Heroics – Last Stand (Below 30% HP):
+
++30% all damage and accuracy (melee & ranged)
+
+-30% physical/magical damage taken
+
+Blocks stop 100% of damage
+
++25% block chance
+
++20% max health pool (for 10 turns)
+
+ELF
+Stat Modifiers:
+
+STR: -20%
+
+CON: -10%
+
+AGI: +20%
+
+INT: 0%
+
+WIS: +10%
+
+Racial Perks (8):
+
+Arcane Precision - +10% max mana and +10% casting speed
+
+Natural Conduit - +10% mana & stamina regen; +15% in nature
+
+Graceful Striker - +10% speed with ranged and agility weapons
+
+Fleetfoot - +10% movement speed
+
+Fading Step - +10% stealth
+
+Naturebound - +10% gathering (wood, herbs, hunting)
+
+Purity of the Grove - Immunity to lesser poisons and diseases
+
+Kindred Favor - +10% CHA with Elves, -15% with non-Elves
+
+Armor Effects:
+
+-30% effectiveness with plate armor
+
++10% with leather armor
+
++10% with chain armor
+
+Legendary Perk: Eternal Flow:
+
++25% passive mana and stamina regen
+
+-15% mana cost
+
++15% movement speed
+
++10% ranged and magic damage
+
+Heroics – Sylvan Awakening:
+
+Below 50% HP: +25% movement speed, AGI, casting speed
+
+Below 30% HP: 6x health regen in combat (if in nature)
+
+Once per day: escape one battle and recover 30% HP, STAM, MANA
+
+If in nature: regenerate 1% mana and stamina per turn while under 30% HP
+
+ORC
+Stat Modifiers:
+
+STR: +20%
+
+CON: +10%
+
+AGI: -20%
+
+INT: 0%
+
+WIS: -10%
+
+Racial Perks (8):
+
+Brutal Force - +10% chance to stagger, -5% accuracy, +15% damage & accuracy vs bleeding enemies, -10% ranged/magic accuracy & casting speed
+
+Hexweaver's Rage - +20% casting speed for Hexes and Curses
+
+Intimidation Aura - -10% enemy morale, 10% chance enemies <20% HP stop attacking
+
+Pack Tactics - +10% CHA with Orcs, -20% with non-Orcs, +20% intimidation when haggling
+
+Ironhide - +10% physical, -5% magical resistance; +50% poison & disease resistance
+
+Savage Endurance - +10% stamina regen, +15% in combat
+
+Hunter's Drive - +20% hunting efficiency
+
+Unrefined Instincts - -10% stealth, -10% crafting speed
+
+Armor Effects – Savage Armor Discipline:
+
++30% with bone armor
+
++20% with leather armor
+
++10% with chain armor
+
+-30% with plate armor
+
+Legendary Perk: Wrath Unleashed:
+
+Below 50% HP:
+
++30% melee damage
+
++20% melee accuracy
+
+Curses & Hexes: 50% stronger, 20% faster
+
+Second Wind: +20% stamina regen for 10 turns (triggers once every 20 turns)
+
+Below 30% HP:
+
++20% chance to stagger on hit
+
+Curses and Hexes become instant-cast
+
+DWARF
+Stat Modifiers:
+
+STR: +10%
+
+CON: +20%
+
+AGI: -20%
+
+INT: 0%
+
+WIS: -10%
+
+Racial Perks (8):
+
+Stubborn Will - Immune to fear, charm, panic
+
+Stonebound Plate - +10% defense and no movement penalties in full plate
+
+Stoneblood - +20% physical resistance
+
+Forge Tempered - +15% fire and heat resistance
+
+Master Craftsman - +15% crafting speed, +10% XP in Smithing, Engineering, Mining
+
+Mountain Stamina - +10% stamina regen, +15% in caves
+
+Battle Trained - +10% mastery with axes, hammers, heavy weapons
+
+Steady Hands - +10% accuracy with thrown weapons and tools
+
+Armor Effects – Dwarven Resilience:
+
++15% magical resistance
+
++10% armor bonus with plate armor
+
++5% with chain armor, +3% with leather armor
+
+Legendary Perk: Heart of the Mountain:
+
+2x passive health regeneration
+
+Immune to stagger
+
+20% chance to deflect spells when wearing plate armor (75%+ durability)
+
+Heroics – Heart of Stone:
+
+<50% HP: 4x regen
+
+<30% HP: 6x regen
+
+<25% HP: once/day, regen 10% HP per turn until 30%+
+
+If HP hits 0: once/day, prevent death and stay at 1 HP
