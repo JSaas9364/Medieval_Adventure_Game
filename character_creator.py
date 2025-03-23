@@ -73,8 +73,15 @@ def update_character_display(race):
     perks = race_info["racial_perks"]
 
     stats_text.delete(1.0, tk.END)
-    for stat, val in stats.items():
-        stats_text.insert(tk.END, f"{stat}: {val}\n")
+
+    base_value = 10  # Default base stat for all
+
+    for stat, modifier_str in stats.items():
+        percent = int(modifier_str)
+        final_value = base_value + int(base_value * percent / 100)
+        sign = "+" if percent >= 0 else ""
+        stats_text.insert(tk.END, f"{stat}: {final_value} ({sign}{percent}%)\n")
+
 
     perks_text.delete(1.0, tk.END)
     for name, desc in perks.items():

@@ -9,12 +9,12 @@
         },
         "racial_perks": {
             "Versatile Learner": "+10% XP gain, +10% reputation gain",
-            "Silver Tongue": "-5% reputation loss, +10% charisma with vendors",
+            "Silver Tongue": "-5% reputation loss, +10% charisma with vendors of all races",
             "Hunter-Gatherer": "+10% gathering and hunting speed",
             "Cartographer": "+20% to avoid ambushes, +20% to spot secrets/treasures, extended threat detection",
-            "Endurance Runner": "+15% stamina pool",
+            "Endurance Runner": "+25% stamina pool",
             "Fading Step": "+10% stealth",
-            "Plague-Hardened": "+10% disease resistance",
+            "Plague-Hardened": "+20% disease resistance",
             "Perfect Guard": "50% chance to riposte (70% reduced damage) if AGI > opponent"
         },
         "armor_effects": {
@@ -22,7 +22,7 @@
         },
         "legendary_perk": {
             "Cartographer's Legacy": {
-                "description": "Immune to ambushes, reveals hidden paths, loot, and threats on the map.",
+                "description": "Immune to ambushes, reveals hidden paths, loot, and threats on the map much more often.",
                 "bonuses": {
                     "XP_gain": "+10%",
                     "reputation_gain": "+10%",
@@ -88,11 +88,11 @@
             "WIS": -10
         },
         "racial_perks": {
-            "Brutal Force": "+10% chance to stagger, -5% accuracy, +15% damage and accuracy vs bleeding enemies, -10% ranged/magic accuracy & casting speed",
+            "Brutal Force": "+10% chance to stagger, -15% accuracy, +15% damage and accuracy vs bleeding enemies, -10% ranged/magic accuracy & casting speed",
             "Hexweaver's Rage": "+20% casting speed for Hexes and Curses",
-            "Intimidation Aura": "-10% enemy morale, 10% chance enemies <20% HP stop attacking",
+            "Intimidation Aura": "-10% enemy attack and magic, 10% chance enemies under 20% HP stop attacking",
             "Pack Tactics": "+10% CHA with Orcs, -20% with non-Orcs, +20% intimidation when haggling",
-            "Ironhide": "+10% physical, -5% magical resistance, +50% poison & disease resistance",
+            "Ironhide": "+10% physical, -5% magical resistance, +50% lesser poison, disease, hex, and curse resistance",
             "Savage Endurance": "+10% stamina regen, +15% in combat",
             "Hunter\u2019s Drive": "+20% hunting efficiency",
             "Unrefined Instincts": "-10% stealth, -10% crafting speed"
@@ -130,14 +130,14 @@
             "WIS": -10
         },
         "racial_perks": {
-            "Stubborn Will": "Immune to fear, charm, panic",
+            "Stubborn Will": "Immune to fear and charm",
             "Stonebound Plate": "+10% defense and no movement penalties in full plate",
             "Stoneblood": "+20% physical resistance",
-            "Forge Tempered": "+15% fire and heat resistance",
-            "Master Craftsman": "+15% crafting speed, +10% XP in Smithing, Engineering, Mining",
-            "Mountain Stamina": "+10% stamina regen, +15% in caves",
-            "Battle Trained": "+10% mastery with axes, hammers, heavy weapons",
-            "Steady Hands": "+10% accuracy with thrown weapons and tools"
+            "Forge Tempered": "+15% fire, ice, lightning resistance",
+            "Master Craftsman": "+20% crafting speed, +10% XP in Smithing, Engineering, Mining",
+            "Mountain Stamina": "+10% stamina regen, +15% in caves, Nightvision",
+            "Battle Trained": "+10% attack and accuracy with axes, hammers, heavy weapons",
+            "Steady Hands": "+10% damage blocked with shields"
         },
         "armor_effects": {
             "plate_armor": "+10% armor effectiveness",
