@@ -1,70 +1,84 @@
+import tkinter as tk
 import json
 
-# Load races from the races.json file
-def load_races():
-    with open('races.json', 'r') as f:
-        return json.load(f)
+# Load race data
+def load_race_data():
+    with open("races.json", "r") as file:
+        return json.load(file)
 
-# Display the stats and perks for each race
-def display_race_details(race, selected_race):
-    print(f"\n{selected_race.upper()}")
-    print("\nStat Modifiers:")
-    for stat, value in race["stat_modifiers"].items():
-        print(f"- {stat}: {value}")
+race_data = load_race_data()
 
-    print("\nRacial Perks:")
-    for perk, description in race["racial_perks"].items():
-        print(f"- {perk}: {description}")
+# Main Window
+window = tk.Tk()
+window.title("Character Creator")
+window.geometry("1200x800")
 
-    print("\nArmor Effects:")
-    for armor, effect in race["armor_effects"].items():
-        print(f"- {armor}: {effect}")
+# Configure grid layout
+window.grid_columnconfigure(0, weight=7)  # 70% for stats/perks
+window.grid_columnconfigure(1, weight=3)  # 30% for selection
+window.grid_rowconfigure(0, weight=1)
 
-    print("\nLegendary Perk:")
-    for perk_name, perk_details in race["legendary_perk"].items():
-        print(f"{perk_name}:")
-        print(f"  - {perk_details['description']}")
-        for bonus, value in perk_details["bonuses"].items():
-            print(f"    - {bonus}: {value}")
+# === LEFT SIDE ===
+left_frame = tk.Frame(window, bg="lightblue")
+left_frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
-    print("\nHeroics:")
-    for heroics_name, heroics_details in race["heroics"].items():
-        print(f"{heroics_name}:")
-        for condition, effect in heroics_details.items():
-            print(f"  - {condition}: {effect}")
+# === RIGHT SIDE ===
+right_frame = tk.Frame(window, bg="lightgray")
+right_frame.grid(row=0, column=1, sticky="nsew", padx=20, pady=20)
 
-# Character creator function
-def character_creator():
-    races = load_races()  # Load races data from races.json
+# --- LEFT CONTENT ---
+stats_label = tk.Label(left_frame, text="Character Stats", font=("Helvetica", 20), bg="lightblue")
+stats_label.pack(pady=10)
 
-    print("Choose your race:")
-    for idx, race_name in enumerate(races.keys(), 1):
-        print(f"{idx}. {race_name}")
+stats_text = tk.Text(left_frame, height=10, width=60, wrap="word", font=("Helvetica", 14))
+stats_text.insert(tk.END, "Select a race to view stats...\n")
+stats_text.pack(pady=10)
 
-    # Get race selection input
-    choice = input("Select race (1-4): ")
-    race_keys = list(races.keys())
+perks_label = tk.Label(left_frame, text="Racial Perks", font=("Helvetica", 20), bg="lightblue")
+perks_label.pack(pady=10)
 
-    try:
-        selected_race = race_keys[int(choice) - 1]
-    except (ValueError, IndexError):
-        print("Invalid choice, please try again.")
-        return
+perks_text = tk.Text(left_frame, height=15, width=60, wrap="word", font=("Helvetica", 14))
+perks_text.insert(tk.END, "Select a race to view perks...\n")
+perks_text.pack(pady=10)
 
-    print(f"\nYou selected {selected_race}!")
-    display_race_details(races[selected_race], selected_race)
+# --- RIGHT CONTENT ---
 
-    # Ask the player if they want to continue or change their selection
-    continue_creation = input("\nDo you want to continue with this race? (y/n): ").strip().lower()
-    if continue_creation == 'y':
-        name = input("\nEnter your character's name: ")
-        print(f"\nWelcome, {name} the {selected_race}!")
-        # Proceed with the game or continue character creation steps...
-    elif continue_creation == 'n':
-        character_creator()  # Restart the process if the player wants to change race
-    else:
-        print("Invalid input, please enter 'y' or 'n'.")
-        character_creator()  # Prompt again in case of invalid input
 
-if __name__ == "__main__":
-    character_creator()
+select_label = tk.Label(right_frame, text="Select Your Race", font=("Helvetica", 18), bg="lightgray")
+select_label.pack(pady=(10, 5))
+
+race_var = tk.StringVar(window)
+race_var.set("Human")
+
+race_menu = tk.OptionMenu(right_frame, race_var, *race_data.keys())
+race_menu.config(width=20, font=("Helvetica", 14))
+race_menu.pack(pady=10)
+
+select_button = tk.Button(right_frame, text="Select Race", command=lambda: update_character_display(race_var.get()), width=20, font=("Helvetica", 14))
+select_button.pack(pady=10)
+
+name_label = tk.Label(right_frame, text="Enter Character Name:", font=("Helvetica", 16), bg="lightgray")
+name_label.pack(pady=20)
+
+name_entry = tk.Entry(right_frame, font=("Helvetica", 14), width=25)
+name_entry.pack(pady=5)
+
+create_button = tk.Button(right_frame, text="Create Character", width=20, font=("Helvetica", 14))
+create_button.pack(pady=20)
+
+# --- Function to update left panel ---
+def update_character_display(race):
+    race_info = race_data[race]
+    stats = race_info["stat_modifiers"]
+    perks = race_info["racial_perks"]
+
+    stats_text.delete(1.0, tk.END)
+    for stat, val in stats.items():
+        stats_text.insert(tk.END, f"{stat}: {val}\n")
+
+    perks_text.delete(1.0, tk.END)
+    for name, desc in perks.items():
+        perks_text.insert(tk.END, f"{name} – {desc}\n\n")
+
+# Run the app
+window.mainloop()
