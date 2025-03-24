@@ -37,7 +37,12 @@ races = {
             "Last Stand": {
                 "below_30_hp": "+30% all damage and accuracy, -30% physical/magical damage taken, blocks stop 100% of damage, block chance +25%, +20% max health pool for 10 turns"
             }
+        },
+        "magic_restrictions": {
+            "allowed": ["All"],
+            "note": "Humans can use all types of magic without restriction."
         }
+
     },
     "Elf": {
         "stat_modifiers": {
@@ -79,7 +84,12 @@ races = {
                 "once_per_day": "Escape one battle, recover 30% health, stamina, and mana",
                 "if_in_nature": "Regenerate 1% mana and stamina per turn while under 30% HP"
             }
+        },
+        "magic_restrictions": {
+            "allowed": ["Nature"],
+            "note": "Can only use Nature magic (includes Fire, Ice, Thunder, and Nature spells)."
         }
+
     },
     "Orc": {
         "stat_modifiers": {
@@ -121,7 +131,12 @@ races = {
                 "below_50_hp": "+30% melee damage, +20% melee accuracy",
                 "below_30_hp": "+20% chance to stagger on hit, curses and hexes become instant-cast"
             }
-        }
+        },
+        # For Orcs
+        "magic_restrictions": {
+            "allowed": ["Curses", "Hexes"],
+            "note": "Healing magic is 50% less effective unless using curses. Cannot use Holy or Nature magic."
+            }
     },
     "Dwarf": {
         "stat_modifiers": {
@@ -162,7 +177,12 @@ races = {
                 "below_25_hp": "Once per day, regenerate 10% HP per turn until 30%+ HP",
                 "if_hp_0": "Once per day, prevent death, remain at 1 HP"
             }
+        },
+        "magic_restrictions": {
+            "allowed": ["Holy"],
+            "note": "Can only use Holy magic. Focuses on healing, defense, and buffs. Cannot use Curses, Hexes, Nature, or Elemental magic."
         }
+
     }
 }
 

@@ -1,5 +1,7 @@
 import tkinter as tk
+from tkinter import ttk, messagebox
 import json
+import os
 
 # Load race data
 def load_race_data():
@@ -42,8 +44,6 @@ perks_text.insert(tk.END, "Select a race to view perks...\n")
 perks_text.pack(pady=10)
 
 # --- RIGHT CONTENT ---
-
-
 select_label = tk.Label(right_frame, text="Select Your Race", font=("Helvetica", 18), bg="lightgray")
 select_label.pack(pady=(10, 5))
 
@@ -63,8 +63,66 @@ name_label.pack(pady=20)
 name_entry = tk.Entry(right_frame, font=("Helvetica", 14), width=25)
 name_entry.pack(pady=5)
 
-create_button = tk.Button(right_frame, text="Create Character", width=20, font=("Helvetica", 14))
+
+'''
+SAVE YOUR CHARACTER CODE START
+'''
+# --- Save + Confirmation ---
+def confirm_and_save_character():
+    name = name_entry.get().strip()
+    race = race_var.get().strip()
+
+    if not name:
+        messagebox.showerror("Missing Name", "Please enter a character name.")
+        return
+
+    if race not in race_data:
+        messagebox.showerror("Invalid Race", "Please select a valid race.")
+        return
+
+    confirm = messagebox.askyesno("Are You Ready?", f"Begin your adventure as {name} the {race}?")
+    if not confirm:
+        return
+
+    save_character(name, race)
+
+
+def save_character(name, race):
+    data = race_data[race]
+
+    character = {
+        "name": name,
+        "race": race,
+        "level": 1,  # default starting level
+        "stats": data.get("stat_modifiers", {}),
+        "racial_perks": data.get("racial_perks", {}),
+        "magic_restrictions": data.get("magic_restrictions", {}),
+        "legendary_perk": data.get("legendary_perk", {}),
+        "heroics": data.get("heroics", {}),
+        "armor_effects": data.get("armor_effects", {})
+    }
+
+    os.makedirs("characters", exist_ok=True)
+    filepath = os.path.join("characters", f"{name}_{race}.json")
+
+    with open(filepath, "w") as file:
+        json.dump(character, file, indent=4)
+
+    messagebox.showinfo("Character Saved", f"{name} the {race} has begun their journey!")
+
+create_button = tk.Button(
+    right_frame,
+    text="Create Character",
+    width=20,
+    font=("Helvetica", 14),
+    command=confirm_and_save_character
+)
 create_button.pack(pady=20)
+
+'''
+SAVE YOUR CHARACTER CODE END
+'''
+
 
 # --- Function to update left panel ---
 def update_character_display(race):
@@ -89,3 +147,5 @@ def update_character_display(race):
 
 # Run the app
 window.mainloop()
+
+
