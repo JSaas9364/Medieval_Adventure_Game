@@ -42,7 +42,6 @@ races = {
             "allowed": ["All"],
             "note": "Humans can use all types of magic without restriction."
         }
-
     },
     "Elf": {
         "stat_modifiers": {
